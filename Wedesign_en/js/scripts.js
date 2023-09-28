@@ -60,6 +60,43 @@ var ourServices = [
   
 ];
 
+let previousArror = document.getElementById("service-previous");
+let nextArrow = document.getElementById("service-next");
+let serviceTitle = document.getElementById("service-title");
+let serviceText = document.getElementById("service-text");
+
+let currenIndex = 0;
+
+nextArrow.onclick = function(){
+  if(currenIndex == (ourServices.length - 1)) //jeśli obecny index = 2 to zaczynamy od 0 w przeciwnym razie dodajemy kolejny
+  {
+    currenIndex = 0;
+  } else{
+    
+    currenIndex +=1
+  }
+  let title = ourServices[currenIndex].title;
+  let text = ourServices[currenIndex].text;
+  serviceTitle.innerHTML = title;
+  serviceText.innerHTML = text;
+  console.log(currenIndex)
+}
+previousArror.onclick = function(){
+  if(currenIndex == 0)
+  {
+    currenIndex = ourServices.length - 1; //jeśli obecny index = 0 to klikajac idziemy na koniec
+    
+  } else{
+    
+    currenIndex -=1
+     
+  }
+  let title = ourServices[currenIndex].title;
+  let text = ourServices[currenIndex].text;
+  serviceTitle.innerHTML = title;
+  serviceText.innerHTML = text;
+  console.log(currenIndex)
+}
 
 
 
