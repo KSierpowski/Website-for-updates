@@ -22,7 +22,22 @@ var aboutUs = {
 var unseletectedColor = "#646872";
 var seletectedColor = "#2A2D34";
 
+let aboutUsTabs = document.getElementsByClassName("single-tab");
 
+for (var a = 0; a < aboutUsTabs.length; a++){
+    aboutUsTabs[a].onclick = function(){
+    let clickedValue = this.innerHTML; 
+    document.getElementById("box-text").innerHTML = aboutUs[clickedValue]; //z wybranej zakladki wyswietla nam sie opis
+
+    for (var b = 0; b < aboutUsTabs.length; b++){
+      aboutUsTabs[b].style["background-color"] = unseletectedColor;
+      aboutUsTabs[b].style["font-weight"] = "normal";
+    }
+    this.style["background-color"] = seletectedColor;
+    this.style["font-weight"] = "bold"
+
+  }
+}
 
 
 // Service slider
